@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './Shop.css';
 import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
 import { addToDb, getShoppingCart } from '../Utilities/fakedb';
@@ -55,8 +54,8 @@ const Shop = () => {
 
     }
     return (
-        <div className='shop-container'>
-            <div className="products-container">
+        <div className='grid grid-cols-5 ml-14'>
+            <div className="grid grid-cols-subgrid col-span-4 gap-4 mt-32">
                 {
                     products.map(product => <Product
                         key={product.id}
