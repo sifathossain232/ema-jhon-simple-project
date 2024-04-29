@@ -2,8 +2,8 @@ import React from 'react';
 import { RiDeleteBinLine } from 'react-icons/ri';
 
 
-const Cart = ({ cart,handleClearCart }) => {
-    console.log(cart);
+const Cart = ({ cart, handleClearCart, children }) => {
+    // console.log(cart);
 
     let totalPrice = 0;
     let totalShipping = 0;
@@ -18,7 +18,7 @@ const Cart = ({ cart,handleClearCart }) => {
 
 
     return (
-        <div className='top-0 sticky bg-[#FFE0B3]'>
+        <div className='top-0 sticky bg-[#FFE0B3] pb-5'>
             <h4 className='flex justify-center font-semibold text-lg py-7 tracking-wider'>Order summary</h4>
             <div className='ml-20 pb-7 flex flex-col text-lg gap-2'>
                 <p>Selacted Items: {quantity}</p>
@@ -32,6 +32,9 @@ const Cart = ({ cart,handleClearCart }) => {
                     Clear Cart
                     <RiDeleteBinLine className='text-xl' />
                 </button>
+            </div>
+            <div>
+                {children}
             </div>
         </div>
     );

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
-import { addToDb, getShoppingCart } from '../Utilities/fakedb';
+import { addToDb, deleteShoppingCart, getShoppingCart } from '../Utilities/fakedb';
+import { Link } from 'react-router-dom';
+import { FaArrowRight } from 'react-icons/fa';
 
 
 const Shop = () => {
@@ -53,9 +55,15 @@ const Shop = () => {
         addToDb(product.id)
 
     }
+
+    const handleClearCart = () => {
+        setCart([]);
+        deleteShoppingCart();
+    }
+
     return (
         <div className='grid grid-cols-4 ml-32'>
-            <div className="grid grid-cols-subgrid col-span-3 gap-4 mt-32">
+            <div className="grid grid-cols-subgrid col-span-3 gap-4 mt-14">
                 {
                     products.map(product => <Product
                         key={product.id}
@@ -65,7 +73,20 @@ const Shop = () => {
                 }
             </div>
             <div className="cart-container">
-                <Cart cart={cart}></Cart>
+                <Cart cart={cart}
+                    handleClearCart={handleClearCart}
+                >
+                    <div className='flex justify-center mt-2'>
+                        <Link className=' text-xl w-[90%] bg-[#FF9900] rounded-md' to="/cheekout">
+                            <button className='w-full'>
+                                <div className='flex items-center justify-between px-4 h-14'>
+                                    Review Order
+                                    <FaArrowRight className='text-white' />
+                                </div>
+                            </button>
+                        </Link>
+                    </div>
+                </Cart>
             </div>
         </div>
     );

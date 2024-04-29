@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Cart from '../Cart/Cart';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import { deleteShoppingCart, removeFromDb } from '../Utilities/fakedb';
+import { FaArrowRight } from 'react-icons/fa';
 
 const Orders = () => {
     const SavedCart = useLoaderData();
@@ -34,8 +35,19 @@ const Orders = () => {
             <div className='relative'>
                 <div className='w-96  absolute right-0'>
                     <Cart
-                        cart={SavedCart}>
+                        cart={SavedCart}
                         handleClearCart={handleClearCart}
+                    >
+                        <div className='flex justify-center mt-2'>
+                            <Link className=' text-xl w-[90%] bg-[#FF9900] rounded-md' to="/orders">
+                                <button className='w-full'>
+                                    <div className='flex items-center justify-between px-4 h-14'>
+                                        Proceed Checkout
+                                        <FaArrowRight className='text-white' />
+                                    </div>
+                                </button>
+                            </Link>
+                        </div>
                     </Cart>
                 </div>
             </div>
