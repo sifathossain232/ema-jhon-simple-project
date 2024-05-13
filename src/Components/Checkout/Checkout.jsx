@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Cheekout = () => {
+const Checkout = () => {
     return (
         <div>
             <h2>Cheekout your order !!! page</h2>
@@ -8,4 +8,4 @@ const Cheekout = () => {
     );
 };
 
-export default Cheekout;
+export default Checkout;

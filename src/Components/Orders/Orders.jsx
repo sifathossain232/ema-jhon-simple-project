@@ -39,7 +39,7 @@ const Orders = () => {
                         handleClearCart={handleClearCart}
                     >
                         <div className='flex justify-center mt-2'>
-                            <Link className=' text-xl w-[90%] bg-[#FF9900] rounded-md' to="/orders">
+                            <Link className=' text-xl w-[90%] bg-[#FF9900] rounded-md' to="/checkout">
                                 <button className='w-full'>
                                     <div className='flex items-center justify-between px-4 h-14'>
                                         Proceed Checkout

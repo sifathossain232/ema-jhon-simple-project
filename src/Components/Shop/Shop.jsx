@@ -77,7 +77,7 @@ const Shop = () => {
                     handleClearCart={handleClearCart}
                 >
                     <div className='flex justify-center mt-2'>
-                        <Link className=' text-xl w-[90%] bg-[#FF9900] rounded-md' to="/cheekout">
+                        <Link className=' text-xl w-[90%] bg-[#FF9900] rounded-md' to="/orders">
                             <button className='w-full'>
                                 <div className='flex items-center justify-between px-4 h-14'>
                                     Review Order
